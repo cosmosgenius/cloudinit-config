@@ -4,7 +4,7 @@ groups:
 users:
   - default
 {{#each users}}
-  - {{this.username}}
+  - name: {{this.username}}
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     groups: docker
     {{#if this.ssh_authorized_keys}}

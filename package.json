@@ -1,0 +1,29 @@
+{
+  "name": "cloudinit-config",
+  "version": "1.0.0",
+  "description": "Cloudinit config generator",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosmosgenius/cloudinit-config.git"
+  },
+  "author": "Sharat M R",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cosmosgenius/cloudinit-config/issues"
+  },
+  "homepage": "https://github.com/cosmosgenius/cloudinit-config#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "2.0.0",
+    "eslint": "7.10.0",
+    "handlebars": "4.7.6",
+    "handlebars-loader": "1.7.1",
+    "prettier": "2.1.2",
+    "ts-loader": "8.0.4",
+    "typescript": "4.0.3"
+  }
+}

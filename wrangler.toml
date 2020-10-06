@@ -1,0 +1,5 @@
+name = "cloudinit-config"
+type = "webpack"
+workers_dev = true
+webpack_config = "webpack.config.js"
+

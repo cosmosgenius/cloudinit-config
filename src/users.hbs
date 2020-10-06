@@ -1,0 +1,20 @@
+groups:
+  - docker
+
+users:
+  - default
+{{#each users}}
+  - {{this.username}}
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: docker
+    {{#if this.ssh_authorized_keys}}
+    ssh_authorized_keys:
+      {{#each this.ssh_authorized_keys}}
+      - {{this}}
+      {{/each}}
+    {{/if}}
+  {{#if this.ghusername}}
+    ssh_import_id:
+      - "gh:{{this.ghusername}}"
+  {{/if}}
+{{/each}}

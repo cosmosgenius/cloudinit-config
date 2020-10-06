@@ -1,0 +1,16 @@
+#cloud-config
+packages: ['git', 'curl', 'zsh', 'build-essential', 'tmux', 'mosh', 'htop']
+write_files:
+  - path: /etc/sysctl.d/enabled_ipv4_forwarding.config
+    content: |
+      net.ipv4.conf.all.forwarding=1
+
+{{>users}}
+
+runcmd:
+  {{#each users}}
+  - runuser -l {{this.username}} -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
+  - chsh -s $(which zsh) {{this.username}}
+  {{/each}}
+  - curl -fsSL https://get.docker.com -o get-docker.sh; sh get-docker.sh
+  - systemctl enable docker

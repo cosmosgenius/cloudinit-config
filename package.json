@@ -2,7 +2,7 @@
   "name": "cloudinit-config",
   "version": "1.0.1",
   "description": "Cloudinit config generator",
-  "main": "index.js",
+  "main": "dist/worker.js",
   "private": true,
   "scripts": {
     "build": "webpack",

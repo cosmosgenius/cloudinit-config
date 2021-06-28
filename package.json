@@ -5,7 +5,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
+    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'"
   },
   "repository": {
     "type": "git",
@@ -13,17 +15,31 @@
   },
   "author": "Sharat M R",
   "license": "MIT",
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "typescript",
+      "prettier"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/cosmosgenius/cloudinit-config/issues"
   },
   "homepage": "https://github.com/cosmosgenius/cloudinit-config#readme",
   "devDependencies": {
     "@cloudflare/workers-types": "^2.2.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
     "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-typescript": "^3.0.0",
     "handlebars": "^4.7.7 ",
     "handlebars-loader": "1.7.1",
     "prettier": "^2.3.2",
     "ts-loader": "^9.2.3",
-    "typescript": "^4.3.4"
-  }
+    "typescript": "^4.3.4",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {}
 }

@@ -1,8 +1,15 @@
+const path = require('path');
+
 module.exports = {
-  target: "webworker",
-  mode: "production",
+  entry: './src/index.ts',
+  output: {
+    filename: 'worker.js',
+    path: path.join(__dirname, 'dist'),
+  },
+  target: 'webworker',
+  mode: 'production',
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
@@ -10,9 +17,7 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
       },
-      { test: /\.hbs$/,
-        loader: "handlebars-loader"
-      }
+      { test: /\.hbs$/, loader: 'handlebars-loader' },
     ],
   },
-}
+};
